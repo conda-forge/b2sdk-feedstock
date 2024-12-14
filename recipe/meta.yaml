@@ -1,13 +1,13 @@
 {% set name = "b2sdk" %}
-{% set version = "2.6.0" %}
+{% set version = "2.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/b2sdk-{{ version }}.tar.gz
-  sha256: 626ef3a81989479a7b1371c8cd868c95e21cc5e0b074647443a43895325bb9e2
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/b2sdk-{{ version }}.tar.gz
+  sha256: efd9a5c59dcddfe626a7860caa7f420ec4b1c50b0ad30972ccebf17392795cf9
 
 build:
   noarch: python

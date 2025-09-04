@@ -1,5 +1,5 @@
 {% set name = "b2sdk" %}
-{% set version = "2.9.4" %}
+{% set version = "2.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/b2sdk-{{ version }}.tar.gz
-  sha256: 7e47ec9538c8cb483a91ee9e6e38dd0d93319b815aa0c4e8cd4cf8def8f2c8e6
+  sha256: be41a07a49ed332129cf3d73262308774187b230862731e473485400a89f8dc3
 
 build:
   noarch: python
@@ -22,7 +22,6 @@ requirements:
   run:
     - python >={{ python_min }}
     - annotated-types >=0.5.0
-    - importlib-metadata >=3.3.0
     - logfury <2.0.0,>=1.0.1
     - requests <3.0.0,>=2.9.1
     - typing-extensions >=4.7.1

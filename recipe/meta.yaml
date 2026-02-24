@@ -1,5 +1,5 @@
 {% set name = "b2sdk" %}
-{% set version = "2.10.2" %}
+{% set version = "2.10.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/b2sdk-{{ version }}.tar.gz
-  sha256: 39e51ea164a0e12c4ecbf0dac1f290622902ffa0cfa3de83e6b50ee3c95c1465
+  sha256: aec069860587990a88e3504ed09c7f48f20fb156f8dd3b01fb36a869fd6ed772
 
 build:
   noarch: python
@@ -17,7 +17,8 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - pdm-backend
+    - hatchling >=1.24.2
+    - hatch-vcs >=0.4
     - pip
   run:
     - python >={{ python_min }}

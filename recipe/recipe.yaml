@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: b2sdk
+  version: "2.13.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/b2sdk-${{ version }}.tar.gz
+  sha256: edb586be7698b4b868194506cd81d594364e445817461c7e7b43df47378f6827
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling >=1.24.2
+    - hatch-vcs >=0.4
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - annotated-types >=0.5.0
+    - logfury <2.0.0,>=1.0.1
+    - requests <3.0.0,>=2.33.0
+    - typing-extensions >=4.7.1
+  extras:
+    full:
+      - tqdm <5.0.0,>=4.5.0
+      - pydantic >=2.0.1
+
+tests:
+  - python:
+      imports:
+        - b2sdk
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Backblaze B2 SDK
+  license: MIT AND Apache-2.0
+  license_file:
+    - LICENSE
+    - b2sdk/_internal/requests/LICENSE
+    - b2sdk/_internal/requests/NOTICE
+  homepage: https://github.com/Backblaze/b2-sdk-python
+
+extra:
+  recipe-maintainers:
+    - freundTech

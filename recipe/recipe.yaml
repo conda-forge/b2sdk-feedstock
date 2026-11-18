@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: b2sdk
-  version: "2.13.4"
+  version: "2.13.5"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/b2sdk-${{ version }}.tar.gz
-  sha256: 1236a0644b3689b46aa7e7f72d9a2fb46a36d3a84982d0999ddb8f3e19bc90e1
+  sha256: 584a5746be087476fd6106cc7635c2da032d484b73634f7e6afc5758f25c2b5b
 
 build:
   number: 0
